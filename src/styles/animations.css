@@ -1,0 +1,161 @@
+﻿/* ------------------------------------------------------------
+   Décor animé + micro-interactions
+   Toutes les animations sont déclaratives et désactivables.
+   ------------------------------------------------------------ */
+
+.anim-bg {
+  background: linear-gradient(160deg, #fff7f3, #ffeef6 38%, #f5ecff 68%, #fff3e8);
+  background-size: 220% 220%;
+  animation: lq-bg-shift 28s ease-in-out infinite;
+}
+.mood-sad .anim-bg {
+  background: linear-gradient(160deg, #fdf5f7, #f6edf7 45%, #f2eef9 75%, #fbf5f1);
+  background-size: 220% 220%;
+}
+@keyframes lq-bg-shift {
+  0%, 100% { background-position: 0 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.anim-rise { animation: lq-rise linear infinite; }
+@keyframes lq-rise {
+  0% { transform: translateY(0) scale(0.7); opacity: 0; }
+  15% { opacity: 0.7; }
+  100% { transform: translateY(-660px) scale(1.15); opacity: 0; }
+}
+
+.anim-fall { animation: lq-fall linear infinite; }
+@keyframes lq-fall {
+  0% { transform: translate3d(0, 0, 0) rotate(0); }
+  100% { transform: translate3d(46px, 920px, 0) rotate(540deg); }
+}
+
+.anim-fly { animation: lq-fly linear infinite; }
+@keyframes lq-fly {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(70px, -46px); }
+  50% { transform: translate(140px, 8px); }
+  75% { transform: translate(70px, 54px); }
+  100% { transform: translate(0, 0); }
+}
+
+.anim-wing { animation: lq-flap 0.34s ease-in-out infinite alternate; transform-origin: center; }
+@keyframes lq-flap {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0.3); }
+}
+
+.anim-twinkle { animation: lq-twinkle ease-in-out infinite; }
+@keyframes lq-twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 0.95; transform: scale(1); }
+}
+
+.anim-drift { animation: lq-drift linear infinite; }
+@keyframes lq-drift {
+  from { transform: translateX(-20%); }
+  to { transform: translateX(120%); }
+}
+
+.anim-page { animation: lq-page 0.55s cubic-bezier(0.22, 1, 0.36, 1); }
+@keyframes lq-page {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+
+.anim-sway { animation: lq-sway 5.5s ease-in-out infinite; }
+@keyframes lq-sway {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+}
+.anim-sway-sad { animation: lq-sway-sad 6.5s ease-in-out infinite; }
+@keyframes lq-sway-sad {
+  0%, 100% { transform: rotate(-17deg) translateY(7px); }
+  50% { transform: rotate(-9deg) translateY(4px); }
+}
+
+.anim-bob { animation: lq-bob 3.6s ease-in-out infinite; }
+.anim-bob-slow { animation: lq-bob 6s ease-in-out infinite; }
+@keyframes lq-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+.anim-jump { animation: lq-jump 0.62s cubic-bezier(0.34, 1.56, 0.64, 1) 2; }
+@keyframes lq-jump {
+  0%, 100% { transform: translateY(0) scale(1); }
+  40% { transform: translateY(-26px) scale(1.05); }
+}
+
+.anim-blink {
+  animation: lq-blink 4.4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes lq-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  93% { transform: scaleY(0.06); }
+  96% { transform: scaleY(1); }
+}
+
+.anim-puff { animation: lq-puff 0.6s ease-out forwards; }
+@keyframes lq-puff {
+  from { transform: scale(0.4); opacity: 0.9; }
+  to { transform: scale(2.6); opacity: 0; }
+}
+
+.anim-conf { animation: lq-conf linear forwards; }
+@keyframes lq-conf {
+  0% { transform: translateY(0) rotate(0); opacity: 1; }
+  100% { transform: translateY(880px) rotate(700deg); opacity: 0.1; }
+}
+
+.anim-burst { animation: lq-burst 1s ease-out forwards; }
+@keyframes lq-burst {
+  0% { transform: translate(-50%, -50%) scale(0.3); opacity: 1; }
+  100% {
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.2) rotate(var(--rot));
+    opacity: 0;
+  }
+}
+
+.anim-heart-pop { animation: lq-heart-pop 0.9s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@keyframes lq-heart-pop {
+  0% { transform: scale(0.2); opacity: 0; }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.anim-float-soft { animation: lq-float-soft 4s ease-in-out infinite; }
+@keyframes lq-float-soft {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+/* Le bouton "Non" bouge en left/top : transition dédiée */
+.no-btn-transition {
+  transition:
+    left 0.36s cubic-bezier(0.22, 1.3, 0.36, 1),
+    top 0.36s cubic-bezier(0.22, 1.3, 0.36, 1),
+    transform 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-bg,
+  .anim-rise,
+  .anim-fall,
+  .anim-fly,
+  .anim-wing,
+  .anim-twinkle,
+  .anim-drift,
+  .anim-sway,
+  .anim-sway-sad,
+  .anim-bob,
+  .anim-bob-slow,
+  .anim-jump,
+  .anim-blink,
+  .anim-float-soft {
+    animation: none !important;
+  }
+  .no-btn-transition { transition-duration: 0.05s; }
+}
