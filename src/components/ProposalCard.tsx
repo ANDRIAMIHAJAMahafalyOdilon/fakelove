@@ -84,12 +84,7 @@ export default function ProposalCard({
           reducedMotion={reducedMotion}
         />
 
-        <div className="absolute bottom-1.5 left-1/2 w-full -translate-x-1/2 text-center text-[0.72rem] text-ink-soft">
-          Astuce : « {config.welcome.noLabel} » s’échappe {config.animation.dodgeMaxCount} fois, puis reste sage.
-          <button type="button" onClick={onRefuse} className="ml-1 underline decoration-strawberry text-strawberry">
-            Dire non pour de vrai
-          </button>
-        </div>
+        
       </div>
 
     </div>

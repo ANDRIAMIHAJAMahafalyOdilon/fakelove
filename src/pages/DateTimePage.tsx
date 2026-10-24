@@ -13,12 +13,16 @@ interface Props {
 }
 
 export default function DateTimePage({ config, mood, selectedId, activity, onSelect, onContinue, onHover }: Props) {
+  const isSurprise = activity?.id === 'surprise';
+
   return (
     <div className="relative z-10 w-full max-w-[660px] rounded-[34px] border border-[#ffe1ee] bg-white/95 px-5 pb-6 pt-5 text-center shadow-[0_26px_60px_-26px_rgba(190,92,140,0.5)] sm:px-7">
       <ProgressIndicator current={1} />
       <AnimatedCharacter state={mood} />
-      <h2 className="font-display text-[1.2rem] leading-tight text-[#7a3f56] sm:text-[1.6rem]">{config.time.title}</h2>
-      <p className="mx-auto mt-2 max-w-[42ch] text-[0.92rem] leading-relaxed text-ink-soft">{config.time.message}</p>
+      <h2 className="font-display text-[1.2rem] leading-tight text-[#7a3f56] sm:text-[1.6rem]">{isSurprise ? 'HISOTRO TOAKA KOAAAAAAAA \u{1F497} !' : config.time.title}</h2>
+      {!isSurprise && (
+        <p className="mx-auto mt-2 max-w-[42ch] text-[0.92rem] leading-relaxed text-ink-soft">{config.time.message}</p>
+      )}
 
       <div className="mt-4 flex flex-wrap justify-center gap-3">
         {config.time.options.map((option) => {
@@ -43,7 +47,7 @@ export default function DateTimePage({ config, mood, selectedId, activity, onSel
         })}
       </div>
 
-      {activity && (
+      {activity && !isSurprise && (
         <p className="mt-4 text-[0.92rem] italic text-ink-soft">
           Notre petite aventure commence peut-être par {activity.label.toLowerCase()}... {activity.emoji}💗
         </p>

@@ -5,11 +5,11 @@
  * Change les prénoms, les textes, les activités et les réglages d'animation.
  */
 export const proposalConfig: ProposalConfig = {
-  recipientName: 'Camille',
-  senderName: 'Léo',
+  recipientName: 'Ericah AMV',
+  senderName: 'Odilon Roch',
 
   welcome: {
-    title: 'J’ai une petite question pour toi...',
+    title: 'J’ai une petite question pour toi, Ericah AMV...',
     message:
       'Il y a quelque chose que j’aimerais te demander depuis un petit moment. Tu veux bien m’écouter ?',
     yesLabel: 'Oui 💗',
@@ -32,20 +32,20 @@ export const proposalConfig: ProposalConfig = {
   },
 
   activity: {
-    title: 'Alors... on organise notre premier rendez-vous ? 🌷',
-    message: 'J’aimerais passer un moment avec toi. Qu’est-ce qui te ferait plaisir ?',
+    title: 'Organise notre vaccance rehefa ho tonga aty anao ?',
+    message: 'Efa nahita activité hataotsika manko iaho fa safidio eto izay tianao hatao.',
     cta: 'Continuer',
     options: [
       {
         id: 'cafe',
         emoji: '☕',
-        label: 'Un petit café ensemble',
-        description: 'Une table tranquille et des heures de discussion',
+        label: 'Aller à la plage',
+        description: 'Du sable, la mer et un beau moment ensemble.',
       },
       {
         id: 'parc',
         emoji: '🌳',
-        label: 'Une promenade dans un joli parc',
+        label: 'Une promenade',
         description: 'De l’air frais et des fleurs partout',
       },
       {
@@ -70,7 +70,7 @@ export const proposalConfig: ProposalConfig = {
         id: 'surprise',
         emoji: '💌',
         label: 'Une surprise à découvrir',
-        description: 'Tu verras bien, c’est mon petit secret',
+        description: 'Handeha any zah hakanao de hiara hanao vacance tsika',
       },
     ],
   },
@@ -80,10 +80,8 @@ export const proposalConfig: ProposalConfig = {
     message: 'Rien n’est imposé, dis-moi simplement ce qui t’arrange le plus.',
     cta: 'Continuer',
     options: [
-      { id: 'weekend', emoji: '🌸', label: 'Ce week-end' },
-      { id: 'nextweek', emoji: '🌿', label: 'La semaine prochaine' },
-      { id: 'other', emoji: '📅', label: 'Un autre jour' },
-      { id: 'together', emoji: '🤝', label: 'À décider ensemble' },
+      { id: 'festival-makua', emoji: '🎉', label: 'Festival Makua' },
+      { id: 'after-festival-makua', emoji: '🌸', label: 'Après Festival Makua' },
     ],
   },
 
@@ -91,7 +89,7 @@ export const proposalConfig: ProposalConfig = {
     title: 'Peu importe le programme...',
     message:
       'Je voulais surtout te dire que ça me ferait plaisir de partager un joli moment avec toi. 🌸',
-    restart: 'Recommencer 💗',
+    restart: 'Tu me manques 🥺',
     copy: 'Copier le résumé',
     copied: 'Résumé copié ! 📋',
   },
@@ -99,7 +97,7 @@ export const proposalConfig: ProposalConfig = {
   refusal: {
     headline: 'Oh... je comprends. 💗',
     message: 'Merci d’avoir pris le temps de me répondre.',
-    back: 'Retour à l’accueil',
+    back: 'Revenir sur ta d\u00e9cision',
     reread: 'Relire mon petit message',
   },
 
