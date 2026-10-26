@@ -12,12 +12,12 @@ export default function ResponsePage({ config, onRestart, onReread }: Props) {
   return (
     <div className="relative z-10 w-full max-w-[660px] rounded-[34px] border border-[#ffe1ee] bg-white/95 px-5 pb-6 pt-6 text-center shadow-[0_26px_60px_-26px_rgba(190,92,140,0.5)] sm:px-7">
       <div className="pointer-events-none absolute inset-[9px] rounded-[26px] border border-dashed border-blush" />
-      <FlowerDecoration variant="rose" position="tl" sad />
-      <FlowerDecoration variant="tulip" position="tr" sad />
-      <FlowerDecoration variant="daisy" position="bl" sad />
-      <FlowerDecoration variant="rose" position="br" sad />
+      <FlowerDecoration variant="rose" position="tl" />
+      <FlowerDecoration variant="tulip" position="tr" />
+      <FlowerDecoration variant="daisy" position="bl" />
+      <FlowerDecoration variant="rose" position="br" />
 
-      <AnimatedCharacter state="sad" />
+      <AnimatedCharacter state="happy" />
 
       <h2 className="font-display text-[1.25rem] leading-tight text-[#7a3f56] sm:text-[1.6rem]">
         {config.refusal.headline}
@@ -25,7 +25,7 @@ export default function ResponsePage({ config, onRestart, onReread }: Props) {
       <p className="mx-auto mt-2 max-w-[44ch] text-[0.95rem] leading-relaxed text-ink-soft">{config.refusal.message}</p>
 
       <p className="mt-3 text-[0.8rem] text-ink-soft opacity-80">
-        Ce n’est pas un “non” définitif, juste un petit “pas maintenant”. 🌷
+        Tu peux revenir découvrir ton petit cadeau quand tu voudras. 🌷
       </p>
 
       <div className="mt-5 flex flex-wrap justify-center gap-3">

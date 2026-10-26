@@ -38,7 +38,7 @@ export default function ProposalCard({
       <FlowerDecoration variant="rose" position="br" sad={sad} />
 
       <span className="inline-block rounded-full bg-[#fff0f6] px-3.5 py-1 text-[0.72rem] font-bold uppercase tracking-[0.14em] text-strawberry">
-        Une question pour {config.recipientName}
+        Un petit cadeau pour {config.recipientName}
       </span>
 
       <AnimatedCharacter state={mood} className="mt-1" />

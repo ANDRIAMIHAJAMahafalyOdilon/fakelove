@@ -2,6 +2,9 @@
 import type { ProposalConfig } from '../types';
 import AnimatedCharacter from '../components/AnimatedCharacter';
 import FlowerDecoration from '../components/FlowerDecoration';
+import ashleyPhoto from '../sary/WhatsApp Image 2026-10-26 at 08.43.36 (2).jpeg';
+import ashleySunsetPhoto from '../sary/WhatsApp Image 2026-10-26 at 08.43.36.jpeg';
+import ashleyPinkPhoto from '../sary/WhatsApp Image 2026-10-26 at 08.43.37.jpeg';
 
 interface Props {
   config: ProposalConfig;
@@ -23,6 +26,47 @@ export default function ProposalPage({ config, celebrating, onContinue }: Props)
       </div>
 
       <AnimatedCharacter state={celebrating ? 'celebration' : 'excited'} />
+
+      <div className="relative mx-auto mt-3 h-[360px] w-[280px] sm:h-[420px] sm:w-[390px]">
+        <figure className="absolute left-[14px] top-[220px] z-0 h-[128px] w-[105px] rotate-[-9deg] rounded-2xl bg-white p-2 pb-3 shadow-[0_12px_28px_-12px_rgba(132,64,94,0.55)] sm:left-[52px] sm:top-[270px] sm:h-[150px] sm:w-[125px]">
+          <img src={ashleySunsetPhoto} alt="Ashley devant un coucher de soleil" className="h-full w-full rounded-xl object-cover" />
+        </figure>
+        <figure className="absolute right-[14px] top-[220px] z-0 h-[128px] w-[105px] rotate-[9deg] rounded-2xl bg-white p-2 pb-3 shadow-[0_12px_28px_-12px_rgba(132,64,94,0.55)] sm:right-[52px] sm:top-[270px] sm:h-[150px] sm:w-[125px]">
+          <img src={ashleyPinkPhoto} alt="Ashley avec une tenue rose" className="h-full w-full rounded-xl object-cover" />
+        </figure>
+        <figure className="absolute left-1/2 top-0 z-10 h-[250px] w-[184px] -translate-x-1/2 rotate-[-2deg] rounded-[28px] bg-white p-2 pb-4 shadow-[0_18px_38px_-12px_rgba(132,64,94,0.6)] ring-2 ring-[#ffc6dd] sm:h-[310px] sm:w-[228px]">
+          <img
+            src={ashleyPhoto}
+            alt="Ashley, au cœur de ma surprise"
+            className="h-full w-full rounded-[22px] object-cover object-[center_35%]"
+          />
+        </figure>
+        <div className="pointer-events-none absolute inset-0 z-20" aria-hidden="true">
+          {[
+            ['💗', '4%', '12%', 'text-3xl', 0],
+            ['💕', '78%', '4%', 'text-2xl', 0.15],
+            ['💖', '0%', '48%', 'text-2xl', 0.3],
+            ['💘', '83%', '41%', 'text-3xl', 0.45],
+            ['💞', '12%', '77%', 'text-2xl', 0.6],
+            ['💓', '76%', '79%', 'text-2xl', 0.75],
+          ].map(([heart, left, top, size, delay]) => (
+            <motion.span
+              key={heart}
+              className={`absolute ${size}`}
+              style={{ left, top }}
+              initial={{ scale: 0, rotate: -18 }}
+              animate={{ scale: [0.85, 1.1, 0.95], y: [0, -7, 0], rotate: [0, 9, 0] }}
+              transition={{ delay: Number(delay), duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              {heart}
+            </motion.span>
+          ))}
+        </div>
+      </div>
+
+      <p className="font-display text-[1.45rem] font-bold leading-tight text-[#d94f83] sm:text-[1.8rem]">
+        Je t’aime fort, Ashley 💗
+      </p>
 
       <motion.h1
         initial={{ opacity: 0, y: 12 }}

@@ -26,7 +26,7 @@ export default function App() {
   const { state: mood, flash, setBaseState } = useCharacterState('idle');
 
   useEffect(() => {
-    setBaseState(step === 'refusal' ? 'sad' : step === 'welcome' ? 'idle' : 'happy');
+    setBaseState(step === 'welcome' ? 'idle' : 'happy');
   }, [step, setBaseState]);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function App() {
 
   const handleRefuse = useCallback(() => {
     setStep('refusal');
-    setBaseState('sad');
+    setBaseState('happy');
   }, [setBaseState]);
 
   const handleRestart = useCallback(() => {
@@ -56,16 +56,10 @@ export default function App() {
   const activity = config.activity.options.find((o) => o.id === answers.activityId) ?? null;
   const time = config.time.options.find((o) => o.id === answers.timeId) ?? null;
 
-  const isSad = step === 'refusal';
-
   return (
-    <main
-      className={`anim-bg relative flex min-h-screen w-full items-center justify-center overflow-x-hidden px-3.5 py-8 ${
-        isSad ? 'mood-sad' : ''
-      }`}
-    >
-      <FloatingHearts count={config.animation.heartCount} dimmed={isSad} />
-      <FloatingPetals count={config.animation.petalCount} slow={isSad} />
+    <main className="anim-bg relative flex min-h-screen w-full items-center justify-center overflow-x-hidden px-3.5 py-8">
+      <FloatingHearts count={config.animation.heartCount} />
+      <FloatingPetals count={config.animation.petalCount} />
       <Butterflies />
       <CelebrationEffect active={celebrating} />
 
